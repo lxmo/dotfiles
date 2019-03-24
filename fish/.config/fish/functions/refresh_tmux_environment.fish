@@ -8,8 +8,8 @@ function refresh_tmux_environment --on-event fish_preexec -d "Ensure the current
     # Filter out variables that were not set in parent that started tmux (tmux prepends '-' for unset variables)
     for line in (tmux show-environment | grep '^[^-]')
       # Split by the equals sign to get the variable name and value
-      set -l varname (echo $line | sed -r 's/(.*)=.*/\1/')
-      set -l varvalue (echo $line | sed -r 's/.*=(.*)/\1/')
+      set -l varname (echo $line | sed -E 's/(.*)=.*/\1/')
+      set -l varvalue (echo $line | sed -E 's/.*=(.*)/\1/')
       # Set the variable in this session
       set -g -x "$varname" "$varvalue"
     end
