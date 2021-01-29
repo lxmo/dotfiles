@@ -15,6 +15,10 @@ $ cd ~/.dotfiles
 $ stow fish neovim tmux # plus whatever else you'd like
 ```
 
+Links
+-----
+[Managing dotfiles with GNU stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
+
 License
 -------
 
